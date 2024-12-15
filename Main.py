@@ -1,6 +1,5 @@
 import discord
 import pybooru
-import pygelbooru
 from Presets.DiscordReplies import Post
 from Requirements import dis_settings
 from Importers.ImportDan import Req_pic
