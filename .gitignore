@@ -162,4 +162,4 @@ cython_debug/
 #.idea/
 
 # *booru keys and Discord config
-Requirements/
+Requirements.py

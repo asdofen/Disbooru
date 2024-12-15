@@ -2,14 +2,14 @@ import discord
 import pybooru
 import pygelbooru
 from Presets.DiscordReplies import Post
-from Requirements.DiscordConfig import settings
+from Requirements import dis_settings
 from Importers.ImportDan import Req_pic
 from discord.ext import commands
 from Presets.Censor import Censor
 
 
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix = (settings['prefix']), intents = intents)
+bot = commands.Bot(command_prefix = (dis_settings['prefix']), intents = intents)
 user = discord.user
 bot.remove_command('help')
 
@@ -75,4 +75,4 @@ async def gel(ctx): # Реквест пикчи с гелбуру
 
     await ctx.send(":wrench: WIP :wrench:")
 
-bot.run(settings['token'])
+bot.run(dis_settings['token'])

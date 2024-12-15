@@ -1,12 +1,12 @@
 import discord
-from Requirements.DiscordConfig import settings
+from Requirements import dis_settings
 
 
 class Post:
     def createEmbed(image_board, cens_type, post, post_rating):
         source = {'dan': 'Danbooru', 'gel': 'Gelbooru', 'none': 'Неизвестный источник'}
         censor = {'safe': 'С цензурой', 'nsfw': 'Без цензуры', 'none': ':snake:'}
-        color = {'safe': settings['embed_color1'], 'nsfw': settings['embed_color2']}
+        color = {'safe': dis_settings['embed_color1'], 'nsfw': dis_settings['embed_color2']}
 
         def text_editor(text):  # Форматирование тегов
             text = text.replace(" ", ", ")
