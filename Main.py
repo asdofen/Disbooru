@@ -20,13 +20,13 @@ async def help(ctx):
 
 
 @bot.command()
-async def dan(ctx): # Реквест пикчи с данбору с цензурой
+async def dan(ctx): # Danbooru request censored
     author = ctx.message.author
 
     try:
         content = ctx.message.content.replace('!dan', '')
         post = Req_pic.danpic(content)
-        print(f"Рейтинг пикчи: {post['rating']}")
+        print(f"Rating: {post['rating']}")
 
         if post['rating'] == 'e' or post['rating'] == 'q':
             post = Censor.censorDef(post, content)
@@ -34,19 +34,19 @@ async def dan(ctx): # Реквест пикчи с данбору с цензу�
         await ctx.send(embed = Post.createEmbed('dan', 'safe', post, Censor.rating(post)))
 
     except IndexError:
-        await ctx.send(f"{author.mention}, введённого тега не существует, попробуй что-то другое")
+        await ctx.send(f"{author.mention}, Nobody here but us chickens! Maybe entered tag doesn't exist.")
     except pybooru.exceptions.PybooruHTTPError:
-        await ctx.send(f"{author.mention}, нельзя запросить больше двух тегов!")
+        await ctx.send(f"{author.mention}, You cannot search for more than 2 tags at a time.")
     except KeyError:
-        await ctx.send(f"{author.mention}, этот тег заблокирован, либо в посте отсутствует пикча.")
+        await ctx.send(f"{author.mention}, Blacklisted tag or post does not contains image.")
     except TypeError:
-        await ctx.send(f"{author.mention}, параметр к тегу задан неверно, либо другая ошибка.")
+        await ctx.send(f"{author.mention}, Unknown error.")
     except Exception as e:
         print(e)
 
 
 @bot.command()
-async def danun(ctx): # Реквест пикчи с данбору без цензуры
+async def danun(ctx): # Danbooru request uncensored
     author = ctx.message.author
 
     try:
@@ -58,19 +58,19 @@ async def danun(ctx): # Реквест пикчи с данбору без це�
         await ctx.send(embed = Post.createEmbed('dan', 'nsfw', post, Censor.rating(post)))
         
     except IndexError:
-        await ctx.send(f"{author.mention}, введённого тега не существует, попробуй что-то другое")
+        await ctx.send(f"{author.mention}, Nobody here but us chickens! Maybe entered tag doesn't exist.")
     except pybooru.exceptions.PybooruHTTPError:
-        await ctx.send(f"{author.mention}, нельзя запросить больше двух тегов!")
+        await ctx.send(f"{author.mention}, You cannot search for more than 2 tags at a time.")
     except KeyError:
-        await ctx.send(f"{author.mention}, этот тег заблокирован, либо в посте отсутствует пикча.")
+        await ctx.send(f"{author.mention}, Blacklisted tag or post does not contains image.")
     except TypeError:
-        await ctx.send(f"{author.mention}, параметр к тегу задан неверно, либо другая ошибка.")
+        await ctx.send(f"{author.mention}, Unknown error.")
     except Exception as e:
         print(e)
 
 
 @bot.command()
-async def gel(ctx): # Реквест пикчи с гелбуру
+async def gel(ctx): # Gelbooru request
 
     await ctx.send(":wrench: WIP :wrench:")
 
