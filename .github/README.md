@@ -15,8 +15,8 @@ Disbooru is discord bot writen on python "bc I'm too ls in any other languages" 
 
 ## Requirements
 Disbooru relies on pip libs like discord.py and pybooru
-[Discord.py](https://pypi.org/project/discord.py/)
-[Pybooru](https://pypi.org/project/Pybooru/)
+-  [Discord.py](https://pypi.org/project/discord.py/)
+-  [Pybooru](https://pypi.org/project/Pybooru/)
 
 ## Installation
 
