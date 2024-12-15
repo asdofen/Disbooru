@@ -4,7 +4,6 @@
   <img src="./readme.png" alt="I do not own the rights to this ico. If you are the owner and want it removed, please contact me." />
 </p>
 
-## Description
 Disbooru is discord bot writen on python "bc I'm too ls in any other languages" that requests random image from Danbooru and Gelbooru(WIP) archives.
 
 ## Features
